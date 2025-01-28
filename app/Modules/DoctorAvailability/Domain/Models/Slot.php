@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\DoctorAvailability\Internal\Models;
+namespace App\Modules\DoctorAvailability\Domain\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

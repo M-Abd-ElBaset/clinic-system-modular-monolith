@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Modules\DoctorAvailability\Internal\Repositories;
+namespace App\Modules\DoctorAvailability\Data\Repositories;
 
-use App\Modules\DoctorAvailability\Internal\Models\Slot;
+use App\Modules\DoctorAvailability\Domain\Models\Slot;
 
-class SlotRepository 
+class SlotRepository
 {
     public function getAllSlots()
     {
@@ -16,8 +16,8 @@ class SlotRepository
         return Slot::create([
             'id' => Str::uuid(),
             'time' => $data['time'],
-            'doctor_id' => $data['doctor_id'],
-            'doctor_name' => $data['name'],
+            'doctor_id' => auth()->user()->id,
+            'doctor_name' => auth()->user()->name,
             'cost' => round($data['cost'], 2)
         ]);
     }
